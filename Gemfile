@@ -3,6 +3,10 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.6.5'
 
+# 會員系統套件,去ruby找並複製貼上,再去ubuntu執行bundle安裝。
+# https://github.com/heartcombo/devise(說明)
+gem 'devise', '~> 4.7', '>= 4.7.3'
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails', branch: 'main'
 gem 'rails', '~> 6.1.3'
 # Use postgresql as the database for Active Record
