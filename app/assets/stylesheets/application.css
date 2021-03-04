@@ -2,6 +2,8 @@
  *= require_tree .
  *= require_self
  
- 引入(路徑/檔名)css檔
+ 引入icon
+ *= require font-awesome
+ 引入bulma(路徑/檔名)css檔
  *= require bulma/bulma.css
  */

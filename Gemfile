@@ -3,6 +3,9 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.6.5'
 
+# 安裝icon
+gem 'font-awesome-rails'
+
 # 會員系統套件,去ruby找並複製貼上,再去ubuntu執行bundle安裝。
 # https://github.com/heartcombo/devise(說明)
 gem 'devise', '~> 4.7', '>= 4.7.3'
