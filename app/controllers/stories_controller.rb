@@ -32,6 +32,12 @@ class StoriesController < ApplicationController
             render :edit
         end
     end
+    # 
+    def destroy
+        @story.destroy
+        # @story.update(deleted_at: Time.now)
+        redirect_to stories_path, notice: '完了しました'
+    end
 
     private
     def fine_story

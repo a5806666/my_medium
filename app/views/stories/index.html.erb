@@ -7,8 +7,9 @@
         <p> 
             <%= time_ago_in_words(story.updated_at) %>
             <%= link_to '再編集', edit_story_path(story), class: 'button is-outlined is-small' %> 
-            <%= link_to '削除', story, method: 'delete' , class: 'button is-danger is-small', data: { confirm: '記事を削除します。
+            <%= link_to '削除', story, method: 'delete', class: 'button is-danger is-small', data: { confirm: '記事を削除します。
 よろしいですか？' } %> 
+
         </p>
     </div>
     <hr>
