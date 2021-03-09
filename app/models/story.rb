@@ -3,8 +3,22 @@ class Story < ApplicationRecord
   validates :title, presence: true
 
   default_scope { where(deleted_at: nil) }
-
   def destroy
     update(deleted_at: Time.now)
   end
+
+  include AASM
+  aasm(column: 'status') do
+    state :draft, initial: true
+    state :published, :cleaning
+
+    event :publish do
+      transitions from: :draft, to: :published
+    end
+
+    event :unpublish do
+      transitions from: :publish, to: :draft
+    end
+  end
+  
 end

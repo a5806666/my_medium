@@ -13,9 +13,14 @@ class StoriesController < ApplicationController
     # 
     def create
         @story = current_user.stories.new(story_params)
-
+        @story.status = 'published' if params[:publish]
+        
         if @story.save
-            redirect_to stories_path, notice: '完了しました'
+            if params[:publish]
+                redirect_to stories_path, notice: '完了しました'
+            else
+                redirect_to edit_story_path(@story), notice: '完了しました'
+            end
         else
             render :new
         end
