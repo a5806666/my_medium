@@ -64,6 +64,7 @@ GEM
       zeitwerk (~> 2.3)
     addressable (2.7.0)
       public_suffix (>= 2.0.2, < 5.0)
+    babosa (1.0.4)
     bcrypt (3.1.16)
     bindex (0.8.1)
     bootsnap (1.7.2)
@@ -91,6 +92,8 @@ GEM
     ffi (1.14.2)
     font-awesome-rails (4.7.0.7)
       railties (>= 3.2, < 7)
+    friendly_id (5.4.2)
+      activerecord (>= 4.0.0)
     globalid (0.4.2)
       activesupport (>= 4.2.0)
     i18n (1.8.9)
@@ -222,11 +225,13 @@ PLATFORMS
 
 DEPENDENCIES
   aasm (~> 5.1, >= 5.1.1)
+  babosa (~> 1.0, >= 1.0.4)
   bootsnap (>= 1.4.4)
   byebug
   capybara (>= 3.26)
   devise (~> 4.7, >= 4.7.3)
   font-awesome-rails
+  friendly_id (~> 5.4, >= 5.4.2)
   jbuilder (~> 2.7)
   listen (~> 3.3)
   pg (~> 1.1)
