@@ -4,7 +4,18 @@
   <%= render "devise/shared/error_messages", resource: resource %>
 
   <div class="field">
-    <%= f.label :Eメール, class: 'label' %>
+    <%= f.label :username, 'ユーザー名', class: 'label' %>
+    <p class="help">例：@username</p>
+    <div class="control has-icons-left">
+      <%= f.text_field :username , class: 'input is-medium' %>
+      <span class="icon is-small is-left">
+        <i class="far fas fa-user"></i>
+      </span>
+    </div>
+  </div>
+
+  <div class="field">
+    <%= f.label :email, 'Eメール', class: 'label' %>
     <div class="control has-icons-left">
       <%= f.email_field :email, autofocus: true, autocomplete: "email", class: 'input is-medium' %>
       <span class="icon is-small is-left">
@@ -14,7 +25,7 @@
   </div>
 
   <div class="field">
-    <%= f.label :パスワード, class: 'label' %>
+    <%= f.label :password, 'パスワード', class: 'label' %>
     <div class="control has-icons-left">
       <%= f.password_field :password, autocomplete: "new-password", class: 'input is-medium' %>
       <span class="icon is-small is-left">
@@ -27,7 +38,7 @@
   </div>
 
   <div class="field">
-    <%= f.label :パスワード確認, class: 'label' %>  
+    <%= f.label :password_confirmation, 'パスワード確認', class: 'label' %>  
     <div class="control has-icons-left">
       <%= f.password_field :password_confirmation, autocomplete: "new-password", class: 'input is-medium' %>
       <span class="icon is-small is-left">
