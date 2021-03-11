@@ -4,9 +4,27 @@
   <%= render "devise/shared/error_messages", resource: resource %>
 
   <div class="field">
-    <%= f.label :Eメール, class: 'label' %>
+    <%= f.label :username, 'ユーザー名', class: 'label' %>
+    <p class="help">例：@username</p>
     <div class="control has-icons-left">
-      <%= f.email_field :email, autofocus: true, autocomplete: "email", class: 'input is-medium' %>
+      <%= f.text_field :username , class: 'input is-medium' %>
+      <span class="icon is-small is-left">
+        <i class="far fas fa-user"></i>
+      </span>
+    </div>
+  </div>
+
+  <div class="field">
+    <%= f.label :intro, '自己紹介', class: 'label' %>
+    <div class="control">
+      <%= f.text_area :intro , class: 'textarea is-medium', rows: 5 %>
+    </div>
+  </div>
+
+  <div class="field">
+    <%= f.label :email, 'Eメール', class: 'label' %>
+    <div class="control has-icons-left">
+      <%= f.email_field :email, autocomplete: "email", class: 'input is-medium' %>
       <span class="icon is-small is-left">
         <i class="fas fa-envelope"></i>
       </span>
@@ -18,7 +36,7 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :新しいパスワード, class: 'label' %> <i>（変更したくない場合は空白のままにします）</i><br />
+    <%= f.label :password, '新しいパスワード', class: 'label' %> <i>(変更したくない場合は空白のままにします)</i><br />
     <div class="control has-icons-left">
       <%= f.password_field :password, autocomplete: "new-password", class: 'input is-medium' %>
       <span class="icon is-small is-left">
@@ -31,7 +49,7 @@
   </div>
 
   <div class="field">
-    <%= f.label :新しいパスワード再入力, class: 'label' %>
+    <%= f.label :password_confirmation, '新しいパスワード再入力', class: 'label' %>
     <div class="control has-icons-left">
       <%= f.password_field :password_confirmation, autocomplete: "new-password", class: 'input is-medium' %>
       <span class="icon is-small is-left">
@@ -41,7 +59,7 @@
   </div>
 
   <div class="field">
-    <%= f.label :現在のパスワード, class: 'label' %>
+    <%= f.label :current_password, '現在のパスワード', class: 'label' %>
     <div class="control has-icons-left">
       <%= f.password_field :current_password, autocomplete: "current-password", class: 'input is-medium' %>
       <span class="icon is-small is-left">
@@ -54,9 +72,5 @@
     <%= f.submit "変更する", class: 'button is-primary is-medium' %>
   </div>
 <% end %>
-
-<h3>Cancel my account</h3>
-
-<p>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
-
-<%= link_to "ホームページに戻る", :back %>
+<br>
+<%= link_to "ホームページに戻る", :back, class: 'button is-dark' %>
