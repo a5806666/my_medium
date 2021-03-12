@@ -15,6 +15,22 @@
   </div>
 
   <div class="field">
+    <%= f.label :avatar, 'プロフィール画像', class: 'label'%>
+    <label class="file-label">
+      <%= f.file_field :avatar , class: 'file-input'%>
+      <span class="file-cta">
+      <span class="file-icon">
+        <i class="fas fa-upload"></i>
+      </span>
+      <span class="file-label">
+        設定する…
+      </span>
+    </label>
+    <br>
+    <%= avatar(current_user) %>
+  </div>
+
+  <div class="field">
     <%= f.label :intro, '自己紹介', class: 'label' %>
     <div class="control">
       <%= f.text_area :intro , class: 'textarea is-medium', rows: 5 %>
