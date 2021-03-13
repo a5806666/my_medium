@@ -11,7 +11,10 @@ Rails.application.routes.draw do
   # /@使用者名稱
   get '@:username', to: 'pages#user', as: 'user_page'
   
+
+  get "/demo", to: 'pages#demo'
+
   root 'pages#index'
-  
+
   resources :stories
 end
