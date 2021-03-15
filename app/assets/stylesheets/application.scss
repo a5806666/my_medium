@@ -4,16 +4,5 @@
  
  引入icon
  *= require font-awesome
- 引入bulma(路徑/檔名)css檔
- *= require bulma/bulma.css
- 引入stories.scss
- *= require stories
-
  */
 
-.navbar-link{
-    .user-avatar{
-        border-radius: 50%;
-        margin-right: 10px;
-    }
-}

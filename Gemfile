@@ -16,6 +16,8 @@ gem 'friendly_id', '~> 5.4', '>= 5.4.2'
 
 gem 'babosa', '~> 1.0', '>= 1.0.4'
 
+gem 'paranoia', '~> 2.4', '>= 2.4.3'
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails', branch: 'main'
 gem 'rails', '~> 6.1.3'
 # Use postgresql as the database for Active Record
