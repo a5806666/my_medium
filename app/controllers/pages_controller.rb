@@ -1,7 +1,7 @@
 class PagesController < ApplicationController
 
     before_action :find_story, only: [:show]
-
+    
     def index
         #全撈文章 @stories = Story.order(created_at: :desc).includes(:user)
         #只撈公開文章
@@ -9,7 +9,8 @@ class PagesController < ApplicationController
     end
 
     def show
-        
+        @comment = @story.comments.new
+        @comments = @story.comments.order(id: :desc)
     end
 
     def user

@@ -16,5 +16,5 @@ export default class extends Controller {
     let content = this.contentTarget.value
     console.log(content)
   }
-
+  
 }
