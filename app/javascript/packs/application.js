@@ -9,13 +9,13 @@
 // import "channels"
 
 
-// import '@fortawesome/fontawesome-free/js/all';
+
 
 
 // Rails.start()
 // Turbolinks.start()
 // ActiveStorage.start()
 
-
+import '@fortawesome/fontawesome-free/js/all';
 import '../stylesheets'
 import "controllers"
