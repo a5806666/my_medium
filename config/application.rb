@@ -11,12 +11,14 @@ module MyMedium
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 6.1
     config.time_zone = 'Asia/Tokyo'
+    
+    # config.action_view.form_with_generates_remote_forms = true
 
-    config.generators do |g|
-      g.assets false
-      g.helper false
-      g.test_framework false
-    end
+    # config.generators do |g|
+    #   g.assets false
+    #   g.helper false
+    #   g.test_framework false
+    # end
 
     # Configuration for the application, engines, and railties goes here.
     #

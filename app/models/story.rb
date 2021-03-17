@@ -3,7 +3,6 @@ class Story < ApplicationRecord
 
   extend FriendlyId
   friendly_id :slug_candidate, use: :slugged
-
   
   validates :title, presence: true
 
