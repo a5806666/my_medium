@@ -1,12 +1,14 @@
+<%= javascript_pack_tag 'editor' %>
+
 <% if story.errors.any? %>
     <div class="notification is-danger">
         <%= story.errors.full_messages.to_sentence %>
     </div>
 <% end %>
 
-<%= form_for(@story) do |form| %>
+<%= form_for(@story, html: {class: 'story-editor'}) do |form| %>
     <div class="field">
-        <%= image_tag story.cover_image.variant(resize: '1000x800'), class: 'cover_image' if story.cover_image.attached? %>
+        <%= image_tag story.cover_image.variant(resize: '1000x800'), class: 'cover_image' if story.cover_image.attached? %><br>
         <%= form.label :cover_image, '記事画像'  %><br>
         <%= form.file_field :cover_image %>
     </div>
@@ -22,7 +24,11 @@
     </div>
 
     <div class="field">
-        <%= form.submit '保存', name: 'save_as_draft', class: 'button is-medium' %>
+        <% if story.published? %>
+            <%= form.submit '更新', name: 'save_as_draft', class: 'button is-medium' %>
+        <% else %>
+            <%= form.submit '保存', name: 'save_as_draft', class: 'button is-medium' %>
+        <% end %>
         <%= form.submit '投稿する', name: 'publish', class: 'button is-medium is-primary' if story.may_publish? %>
         <%= form.submit '下書き', name: 'unpublish', class: 'button is-medium is-danger' if story.may_unpublish? %>
     </div>

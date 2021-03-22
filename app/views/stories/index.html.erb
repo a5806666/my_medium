@@ -6,7 +6,7 @@
             <%= link_to story.title, edit_story_path(story), class: 'has-text-grey-darker' %>
             <%= content_tag :span, '記事公開中！', class: 'tag is-primary' if story.published? %>
         </h2>
-        <p> <%= story.content %> </p>
+        <p> <%= strip_tags(story.content).truncate(200) %> </p>
         <p> 
             <%= time_ago_in_words(story.updated_at) %>
             <%= link_to '再編集', edit_story_path(story), class: 'button is-outlined is-small' %> 
