@@ -18,15 +18,19 @@
                   <% if user_signed_in? %>
                     <div class="navbar-item has-dropdown is-hoverable">
                   <a class="navbar-link">
+                  <%= content_tag :i, "", class: 'fas fa-crown has-text-primary' if current_user.vip_user? %>
+                  <%= content_tag :i, "", class: 'fas fa-crown has-text-danger' if current_user.platinum_user? %>
                   <%= avatar(current_user, size: 50) %>
                   <%= current_user.email %>
                   </a>
                 <div class="navbar-dropdown">
-                     <%= link_to 'アカウント管理', edit_user_registration_path, class: 'navbar-item' %>
                      <%= link_to "記事を書く", new_story_path ,class: 'navbar-item' %>
                      <%= link_to "記事一覧", stories_path ,class: 'navbar-item' %>
-                  <hr class="navbar-divider">
-                    <%= link_to "ログアウト", destroy_user_session_path, class: 'navbar-item', method: 'delete', data: {confirm: 'アカウントをログアウトしますか？'} %>
+                    <hr class="navbar-divider"> 
+                     <%= link_to 'アカウント管理', edit_user_registration_path, class: 'navbar-item' %>
+                     <%= link_to '会員になる', pricing_users_path, class: 'navbar-item' unless current_user.paid_user? %>
+                    <hr class="navbar-divider">
+                     <%= link_to "ログアウト", destroy_user_session_path, class: 'navbar-item', method: 'delete', data: {confirm: 'アカウントをログアウトしますか？'} %>
                 </div>
               </div>
             <% else %>
