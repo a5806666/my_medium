@@ -12,136 +12,57 @@
 
   <section class="section">
     <div class="container">
-
-      <!-- navbar -->
-      <%# <nav class="navbar" role="navigation" aria-label="main navigation">
-        <div class="navbar-brand">
-          <a class="navbar-item" href="https://bulma.io">
-            <img src="https://bulma.io/images/bulma-logo.png" width="112" height="28">
-          </a>
-
-          <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false"
-            data-target="navbarBasicExample">
-            <span aria-hidden="true"></span>
-            <span aria-hidden="true"></span>
-            <span aria-hidden="true"></span>
-          </a>
-        </div>
-
-        <div id="navbarBasicExample" class="navbar-menu">
-          <div class="navbar-start">
-            <a class="navbar-item">
-              首頁
-            </a>
-
-            <div class="navbar-item has-dropdown is-hoverable">
-              <a class="navbar-link">
-                More
-              </a>
-
-              <div class="navbar-dropdown">
-                <a class="navbar-item">
-                  About
-                </a>
-                <a class="navbar-item">
-                  Jobs
-                </a>
-                <a class="navbar-item">
-                  Contact
-                </a>
-                <hr class="navbar-divider">
-                <a class="navbar-item">
-                  Report an issue
-                </a>
-              </div>
-            </div>
-          </div>
-
-          <div class="navbar-end">
-            <div class="navbar-item">
-              <div class="buttons">
-                <a class="button is-primary">
-                  <strong>註冊</strong>
-                </a>
-                <a class="button is-light">
-                  登入
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </nav> %>
-      <!-- navbar -->
-
       <section class="columns">
         <!-- left -->
         <section class="column">
           <article>
-            <figure class="image">
-              <img src="https://fakeimg.pl/350x150/f0f0f0" alt="">
-            </figure>
-            <h2 class="title is-5">Creating a Pipeline to True Workplace Diversity</h2>
-            <p class="content">Providing resources, offering acceptance, and involving people of color are keys to making your company more diverse...</p>
-            <footer>
-              <p>Arielle Wiltz in Modus</p>
-              <p>Aug 7</p>
-            </footer>
+            <% @clap.first(1).each do |story|  %>
+              <figure class="image">
+                <%= image_tag story.cover_image.variant(resize: '300x150') %>
+              </figure><br>
+                <h2 class="title is-4"><%= link_to story.title, story_page_path(story.user.username, story), class: 'has-text-grey-dark' %></h2>
+                <p class="content has-text-grey"><%= strip_tags(story.content).truncate(200) %></p>
+              <footer>
+                <p class="has-text-grey-dark"> <%= story.user.username %> </p>
+                <p class="has-text-grey-dark"> <%= time_ago_in_words(story.created_at) %> </p>
+              </footer>
+            <% end %>
           </article>
         </section>
         <!-- left -->
         <!-- middle -->
         <section class="column">
-          <article class="media">
-            <figure class="media-left">
-              <img src="https://fakeimg.pl/100x100/">
-            </figure>
-            <div class="media-content">
-              <h2 class="title is-5">I Worked for an Amish Reality TV Show</h2>
-              <footer>
-                <p>Arielle Wiltz in Modus</p>
-                <p>Aug 7</p>
-              </footer>
-            </div>
-          </article>
-          <article class="media">
-            <figure class="media-left">
-              <img src="https://fakeimg.pl/100x100/">
-            </figure>
-            <div class="media-content">
-              <h2 class="title is-5">I Worked for an Amish Reality TV Show</h2>
-              <footer>
-                <p>Arielle Wiltz in Modus</p>
-                <p>Aug 7</p>
-              </footer>
-            </div>
-          </article>
-          <article class="media">
-            <figure class="media-left">
-              <img src="https://fakeimg.pl/100x100/">
-            </figure>
-            <div class="media-content">
-              <h2 class="title is-5">I Worked for an Amish Reality TV Show</h2>
-              <footer>
-                <p>Arielle Wiltz in Modus</p>
-                <p>Aug 7</p>
-              </footer>
-            </div>
-          </article>
+          <% @clap[2, 4].each do |story| %>
+            <article class="media">
+              <figure class="media-left">
+                <%= image_tag story.cover_image.variant(resize: '100x100') %>
+              </figure>
+              <div class="media-content">
+                <h2 class="title is-5"><%= link_to story.title.truncate(20), story_page_path(story.user.username, story), class: 'has-text-grey-dark' %></h2>
+                <footer>
+                  <p class="has-text-grey-dark"> <%= story.user.username %> </p>
+                  <p class="has-text-grey-dark"> <%= time_ago_in_words(story.created_at) %> </p>
+                </footer>
+              </div>
+            </article>
+          <% end %>
         </section>
         <!-- middle -->
         <!-- right -->
         <section class="column">
-          <article>
-            <figure class="image">
-              <img src="https://fakeimg.pl/350x200/f0f0f0" alt="">
-            </figure>
-            <h2 class="title is-5">Creating a Pipeline to True Workplace Diversity</h2>
-            <p class="content">Providing resources, offering acceptance, and involving people of color are keys to making your company more diverse...</p>
-            <footer>
-              <p>Arielle Wiltz in Modus</p>
-              <p>Aug 7</p>
-            </footer>
-          </article>
+          <% @clap[1, 1].each do |story| %>
+            <article>
+              <figure class="image">
+                <%= image_tag story.cover_image.variant(resize: '350x200') %>
+              </figure><br>
+              <h2 class="title is-5"><%= link_to story.title.truncate(20), story_page_path(story.user.username, story), class: 'has-text-grey-dark' %></h2>
+              <p class="content has-text-grey"><%= strip_tags(story.content).truncate(200) %></p>
+              <footer>
+                <p class="has-text-grey-dark"> <%= story.user.username %> </p>
+                <p class="has-text-grey-dark"> <%= time_ago_in_words(story.created_at) %> </p>
+              </footer>
+            </article>
+          <% end %>
         </section>
         <!-- right -->
       </section>
@@ -151,15 +72,16 @@
       <section class="columns">
         <!-- article list -->
         <section class="column is-two-thirds">
-            <% @stories.each do |story|  %>
+            <h2 class="title is-4 has-text-primary">最新記事一覧</h2>
+            <hr>
+            <% @stories.first(10).each do |story|  %>
                 <article class="media">
                     <div class="media-content">
                     <h2 class="title is-4"><%= link_to story.title, story_page_path(story.user.username, story), class: 'has-text-grey-dark' %></h2>
-                    <p class="content"><%= strip_tags(story.content).truncate(200) %></p>
+                    <p class="content has-text-grey"><%= strip_tags(story.content).truncate(200) %></p>
                     <footer>
-                        <p>
- 
-                        <%= link_to story.user.username, user_page_path(story.user.username), class: 'has-text-grey-dark' %> | <%= time_ago_in_words(story.created_at) %>
+                        <p class="has-text-grey-dark">
+                         <%= story.user.username %> | <%= time_ago_in_words(story.created_at) %>
                         </p>
                     </footer>
                     </div>
@@ -172,59 +94,22 @@
             <% end %>
         </section>
         <!-- article list -->
-
+        
         <section class="column">
-          <h2 class="title is-4">Popular on Medium</h2>
+          <h2 class="title is-4 has-text-primary">ランダム記事一覧</h2>
           <hr>
-
-          <article class="media">
-            <div class="media-left">01</div>
-            <div class="media-content">
-              <h3>Difficult Conversation Lessons From a Psychologist Who’s Been Dealing With People</h3>
-              <footer>
-                <p>Thomas Oppong</p>
-              </footer>
-            </div>
-          </article>
-
-          <article class="media">
-            <div class="media-left">02</div>
-            <div class="media-content">
-              <h3>Difficult Conversation Lessons From a Psychologist Who’s Been Dealing With People</h3>
-              <footer>
-                <p>Thomas Oppong</p>
-              </footer>
-            </div>
-          </article>
-
-          <article class="media">
-            <div class="media-left">03</div>
-            <div class="media-content">
-              <h3>Difficult Conversation Lessons From a Psychologist Who’s Been Dealing With People</h3>
-              <footer>
-                <p>Thomas Oppong</p>
-              </footer>
-            </div>
-          </article>
-
-          <article class="media">
-            <div class="media-left">04</div>
-            <div class="media-content">
-              <h3>Difficult Conversation Lessons From a Psychologist Who’s Been Dealing With People</h3>
-              <footer>
-                <p>Thomas Oppong</p>
-              </footer>
-            </div>
-          </article>
-
-          <article class="media">
-            <div class="media-left">05</div>
-            <div class="media-content">
-              <h3>Difficult Conversation Lessons From a Psychologist Who’s Been Dealing With People</h3>
-              <footer>
-                <p>Thomas Oppong</p>
-              </footer>
-            </div>
-          </article>
+            <% @stories.sample(@range).each do |story| %>
+              <article class="media">   
+                <div class="media-left">
+                  <i class="fas fa-book has-text-dark"></i>
+                </div>
+              <div class="media-content">
+                <p class="title is-5"><%= link_to story.title, story_page_path(story.user.username, story), class: 'has-text-grey-dark' %></p>
+                <footer>
+                  <p class="content has-text-grey"><%= strip_tags(story.content).truncate(50) %></p>
+                </footer>
+              </div>
+            </article>
+          <% end %>
         </section>
       </section>

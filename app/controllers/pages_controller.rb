@@ -6,6 +6,10 @@ class PagesController < ApplicationController
         #全撈文章 @stories = Story.order(created_at: :desc).includes(:user)
         #只撈公開文章
         @stories = Story.published_stories
+
+        @range = 10
+
+        @clap = Story.order(clap: :desc)
     end
 
     def show
