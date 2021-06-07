@@ -36,7 +36,17 @@
 
 ---
 ## 機能一覧、使用したgemなど
-* ユーザー登録機能、ログイン機能([devise](https://github.com/heartcombo/devise))
+* ユーザー登録機能、ログイン機能([devise](https://hackmd.io/nYCmlVBYTgGy4vYKYyr-Gw))
     * アカウント管理機能(devise)
         * パスワードの変更、ユーザー名を設定する、画像をアップロード([Active Storage](https://hackmd.io/@7beedhBrQk2FjyAtSY5wxQ/SyHnoXCwd))
+    * 記事一覧機能
+        * 記事を再編集．公開をキャンセル([AASM](https://github.com/aasm/aasm))、記事を削除([paranoia](https://github.com/rubysherpas/paranoia))
+        * ページネーション機能([Kaminari](https://qiita.com/residenti/items/1ae1e5ceb59c0729c0b9))
+    * 会員になる機能(**決済するだけです**)([braintree](https://developers.braintreepayments.com/start/overview))
+* 記事を書く機能(AASM)
+    * 画像をアップロード(Active Storage)
+* コメント機能(Ajax)
+* いいね機能(Ajax)
+    * ホームページ(人気記事ランキング)
+  
         
