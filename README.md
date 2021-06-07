@@ -1,4 +1,4 @@
-# MyMedium README
+# [MyMedium README](https://whispering-citadel-92558.herokuapp.com/)
 ###### tags: `github` 
 複数枚の写真を、位置情報つきで投稿できるサービスです。 就職活動用のポートフォリオとして制作致しました。
 
@@ -6,10 +6,17 @@
 
 ---
 
-## 関連リンク
+## 関連リンク & サンプルアカウント
+
+| サンプルアカウント |  | 
+| -------- | -------- | 
+| アカウント | sample@gmail.com | 
+| パスワード | 11111111 | 
+
+
 | タイトル　　　　　　　　　　　　| リンク　　　　　　　　　　　|
 | --------------------------|:------------------------ |
-| ホームページ　　　　　　　　　　|　[:link:][homepage]　　|
+| <font color="red">**ホームページ**</font>　　　　　　　　　　|　[:link:][homepage]　　|
 | 私のブログ（中国語）　　　　　　|　[:link:][blog]　　　　　　|
 | 勉強したオンライン講座（中国語）|　[:link:][オンライン講座]　　|
 
@@ -45,7 +52,7 @@
     * 会員になる機能(**決済するだけです**)([braintree](https://developers.braintreepayments.com/start/overview))
 * 記事を書く機能(AASM)
     * 画像をアップロード(Active Storage)
-* コメント機能(Ajax)
+* 記事にコメントを付ける機能(Ajax)
 * いいね機能(Ajax)
     * ホームページ(人気記事ランキング)
   
