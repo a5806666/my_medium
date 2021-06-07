@@ -8,22 +8,26 @@
 
 ## 関連リンク & サンプルアカウント
 
-| サンプルアカウント |  | 
-| -------- | -------- | 
-| アカウント | sample@gmail.com | 
-| パスワード | 11111111 | 
-
-
 | タイトル　　　　　　　　　　　　| リンク　　　　　　　　　　　|
 | --------------------------|:------------------------ |
 | <font color="red">**ホームページ**</font>　　　　　　　　　　|　[:link:][homepage]　　|
 | 私のブログ（中国語）　　　　　　|　[:link:][blog]　　　　　　|
 | 勉強したオンライン講座（中国語）|　[:link:][オンライン講座]　　|
 
-
 [homepage]: https://whispering-citadel-92558.herokuapp.com/
 [blog]: http://translate.google.com/translate?hl=en&sl=zh-CN&tl=ja&u=https%3A%2F%2Fhackmd.io%2F%407beedhBrQk2FjyAtSY5wxQ&sandbox=1
 [オンライン講座]: http://translate.google.com/translate?hl=en&sl=zh-CN&tl=ja&u=https%3A%2F%2Fcampus.5xruby.tw%2Fp%2Fcoding
+
+| サンプルアカウント |  | 
+| -------- | -------- | 
+| アカウント | sample@gmail.com | 
+| パスワード | 11111111 | 
+
+| クレジットカード |  | 
+| -------- | -------- | 
+| カード番号 | 4111 1111 1111 1111 | 
+| 有効期限 | 02 / 22 | 
+
 
 ---
 
@@ -49,7 +53,7 @@
     * 記事一覧機能
         * 記事を再編集．公開をキャンセル([AASM](https://github.com/aasm/aasm))、記事を削除([paranoia](https://github.com/rubysherpas/paranoia))
         * ページネーション機能([Kaminari](https://qiita.com/residenti/items/1ae1e5ceb59c0729c0b9))
-    * 会員になる機能(**決済するだけです**)([braintree](https://developers.braintreepayments.com/start/overview))
+    * 会員になる機能(**決済するだけです**)([braintree-sandbox](https://developers.braintreepayments.com/start/overview))
 * 記事を書く機能(AASM)
     * 画像をアップロード(Active Storage)
 * 記事にコメントを付ける機能(Ajax)
